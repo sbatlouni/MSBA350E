@@ -1,7 +1,3 @@
 altair
 pandas
 streamlit
-collections
-math
-os
-datetime
