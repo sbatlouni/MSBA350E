@@ -14,7 +14,7 @@ st.markdown("# ")
 
 
 # Reading the data
-combined_df = pd.read_csv(os.getcwd() + r'\data\processed\combined_dataset.csv')
+combined_df = pd.read_csv(os.getcwd() + '/data/processed/combined_dataset.csv')
 combined_df['Year-Week-dt'] = combined_df['Year-Week'].apply(lambda x: datetime.strptime(x + '-0', "%Y-%W-%w"))
 combined_df['Year-Week'] = combined_df['Year-Week'].apply(lambda x: x.split('-')[0] + '-' + '0' if len(x.split('-')[1]) == 1 else '' + x.split('-')[1] )
 

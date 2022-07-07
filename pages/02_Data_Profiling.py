@@ -12,8 +12,8 @@ st.markdown("## This page is to allow data analysts to explore the underlying ra
 st.markdown("# ")
 
 # Reading the data
-tests_and_deaths_raw = pd.read_csv(os.getcwd() + r'\data\raw\COVID-19_Cases__Tests__and_Deaths_by_ZIP_Code.csv')
-vaccinations_raw = pd.read_csv(os.getcwd() + r'\data\raw\COVID-19_Vaccinations_by_ZIP_Code.csv')
+tests_and_deaths_raw = pd.read_csv(os.getcwd() + '/data/raw/COVID-19_Cases__Tests__and_Deaths_by_ZIP_Code.csv')
+vaccinations_raw = pd.read_csv(os.getcwd() + '/data/raw/COVID-19_Vaccinations_by_ZIP_Code.csv')
 
 # Conforming tests_and_deaths
 tests_and_deaths_conformed = tests_and_deaths_raw.copy()
@@ -44,7 +44,7 @@ vaccination_weekly_cumilative_df = (vaccinations_raw_conformed[['Zip Code', 'Yea
                                     .groupby(['Zip Code', 'Year-Week']).max())
 vaccination_weekly_merged_df = vaccination_weekly_df.join(vaccination_weekly_cumilative_df, how='inner')
 
-combined_dataset = pd.read_csv(os.getcwd() + r'\data\processed\combined_dataset.csv')
+combined_dataset = pd.read_csv(os.getcwd() + '/data/processed/combined_dataset.csv')
 
 st.markdown("## Dataset 1:")
 st.markdown("## COVID-19 Cases, Tests, and Deaths by ZIP Code")

@@ -12,7 +12,7 @@ st.markdown("## This page provides a summary of the cases, deaths, and vaccines 
 st.markdown("# ")
 
 # Reading the data
-combined_df = pd.read_csv(os.getcwd() + r'\data\processed\combined_dataset.csv')
+combined_df = pd.read_csv(os.getcwd() + '/data/processed/combined_dataset.csv')
 
 selected_zips = st.sidebar.multiselect('Zip Code', combined_df['Zip Code'].unique())
 
