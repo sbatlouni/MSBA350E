@@ -44,8 +44,7 @@ vaccination_weekly_cumilative_df = (vaccinations_raw_conformed[['Zip Code', 'Yea
                                     .groupby(['Zip Code', 'Year-Week']).max())
 vaccination_weekly_merged_df = vaccination_weekly_df.join(vaccination_weekly_cumilative_df, how='inner')
 
-combined_dataset = tests_and_deaths_conformed.join(vaccination_weekly_merged_df, on=['Zip Code', 'Year-Week'], how='left').fillna(0).reset_index()
-
+combined_dataset = pd.read_csv(os.getcwd() + r'\data\processed\combined_dataset.csv')
 
 st.markdown("## Dataset 1:")
 st.markdown("## COVID-19 Cases, Tests, and Deaths by ZIP Code")
